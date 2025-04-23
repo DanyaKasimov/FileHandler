@@ -6,6 +6,8 @@
 docker-compose.yml
 ```
 
+Если возникнут проблемы с запуском, сделаете clean/install
+
 Swagger доступен по адресу:
 
 ```
