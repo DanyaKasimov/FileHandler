@@ -38,11 +38,11 @@ public class XlsxReader {
             }
 
         } catch (FileNotFoundException e) {
-            throw new NoDataFoundException("Файл не найден: " + fullPath);
+            throw new NoDataFoundException("Файл {} не найден.", fileName);
         } catch (EncryptedDocumentException e) {
-            throw new InvalidDataException("Файл зашифрован и не может быть прочитан: " + fullPath);
+            throw new InvalidDataException("Файл {} зашифрован и не может быть прочитан", fileName);
         } catch (IOException e) {
-            throw new RuntimeException("Ошибка при чтении файла: " + fullPath, e);
+            throw new RuntimeException("Ошибка при чтении файла: " + fileName, e);
         }
 
         return numbers;
