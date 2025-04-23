@@ -1,0 +1,17 @@
+version: '3.8'
+
+
+services:
+  file-handler:
+    image: openjdk:22-ea-19-jdk-slim
+    container_name: file-handler-service
+    ports:
+      - "8095:8095"
+    volumes:
+      - ./target/XLParser-1.0-SNAPSHOT.jar:/app/app.jar
+      - ./src/files:/app/files
+    working_dir: /app
+    environment:
+      SPRING_PROFILES_ACTIVE: default
+      APP_BASE_PATH: /app/files/
+    entrypoint: [ "java", "-jar", "/app/app.jar" ]

@@ -1,0 +1,16 @@
+server:
+  port: 8095
+
+app:
+  num-row: 0
+  num-column: 0
+  base-path: src/files/
+
+spring:
+  application:
+    name: file-handler
+
+springdoc:
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui
